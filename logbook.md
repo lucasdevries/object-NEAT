@@ -2,13 +2,13 @@
 # Thursday, April 11
 * MNIST crashed, no space left on hard disk. 
 * Restore checkpoint function was nog working as is should have worked. Debugged and found a solution to the problem.
-* Same github problem, have to get rid of the checkpoints upload but gitignore is not working... Old (unfinished) commits are still in queue.
+* Same github problem, I have to get rid of the checkpoints upload but gitignore is not working... Old (unfinished) commits are still in queue.
 * Strangly, the best indiviual jumps from fitness 0 to ~0.2 to 0.5 to 0.83, no gradual improvements.
 * Talk with Finn and Gongjin: next steps: try sobel with larger stride, so pooling is not neccessary. Test only for positive samples.w
 
 # Wednesday, April 10
 * Analyzed the 5000 gens run from last night.
-![alt text](https://github.com/lucasdevries/NeuroEvolution/blob/master/images/indivduals-5000gens-11april.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/indivduals-5000gens-11april.png?raw=true)
 * There were just two species, so for the next run I changed the compatibility_threshold to 2.6, species_elitism to 3 and elitism to 1 with a survival_threshold of 0.8. This should infer more diversity and more reproduction, while the best 3 individuals of the different species are conserved.
 * mnist is still running. 
 * Reviewed the positive and negative examples and I got rid off all images for which it was difficult (even for a human) to classify it as positive or negative.
@@ -24,18 +24,18 @@
 # Monday, April 8
 * Plotted all individuals: fitness vs. generations. Therefore I had to extract all innovation numbers and generation numbers. Modified a lot of code. 
 * A lot of networks have fitness 0.5: expected as the output is binary. 
-![alt text](https://github.com/lucasdevries/NeuroEvolution/blob/master/images/individuals.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/individuals.png?raw=true)
 
 # Friday, April 5
 * Ran a few experiments with 2500 and 6000 generations, got 0.83 test accuracy. Still not the network with a lot complexity.
-![alt text](https://github.com/lucasdevries/NeuroEvolution/blob/master/images/6000gens.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/6000gens.png?raw=true)
 * Next step: track individual over all generations and see how it changes over time to get more insights.
 * For next experiment: reduce elitism to achieve higher diversity. 
 
 # Thursday, April 5
 * Made logbook to track progress. 
 * Played with parameters, got 0.81 test accuracy. 
-![alt text](https://github.com/lucasdevries/NeuroEvolution/blob/master/images/300gens.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/300gens.png?raw=true)
 
 
 
