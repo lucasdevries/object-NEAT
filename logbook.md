@@ -1,19 +1,24 @@
 ## Log book
-# Thursday, April 11
+# Monday, April 16
+* Changed the sobel filter: Using a larger stride (3), pooling is not needed anymore.
+* Implemented soft-max layer in the evaluation to predict final output.
+* Run experiment, 5000 generations with the new sobel operator and softmax layer. Testing on both positive and negative samples. Reduced compatability threshold further to 2.4 to get more speciation. 
+
+# Thursday, April 12
 * MNIST crashed, no space left on hard disk. 
 * Restore checkpoint function was nog working as is should have worked. Debugged and found a solution to the problem.
 * Same github problem, I have to get rid of the checkpoints upload but gitignore is not working... Old (unfinished) commits are still in queue.
 * Strangly, the best indiviual jumps from fitness 0 to ~0.2 to 0.5 to 0.83, no gradual improvements.
 * Talk with Finn and Gongjin: next steps: try sobel with larger stride, so pooling is not neccessary. Test only for positive samples.w
 
-# Wednesday, April 10
+# Wednesday, April 11
 * Analyzed the 5000 gens run from last night.
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/indivduals-5000gens-11april.png?raw=true)
 * There were just two species, so for the next run I changed the compatibility_threshold to 2.6, species_elitism to 3 and elitism to 1 with a survival_threshold of 0.8. This should infer more diversity and more reproduction, while the best 3 individuals of the different species are conserved.
 * mnist is still running. 
 * Reviewed the positive and negative examples and I got rid off all images for which it was difficult (even for a human) to classify it as positive or negative.
 
-# Tuesday, April 9
+# Tuesday, April 10
 * Extracted the network parameters for the n best individuals.
 * Implemented a python script to load the MNIST data set and modify NEAT to work with this data.
 * Ran new experiment with 6000 generations to use and to track the fitness back to generation zero. 
@@ -21,7 +26,7 @@
 * Runs: mnist 2500 gens, evolve 5000 gens.
 
 
-# Monday, April 8
+# Monday, April 9
 * Plotted all individuals: fitness vs. generations. Therefore I had to extract all innovation numbers and generation numbers. Modified a lot of code. 
 * A lot of networks have fitness 0.5: expected as the output is binary. 
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/individuals.png?raw=true)
