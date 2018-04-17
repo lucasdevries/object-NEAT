@@ -1,4 +1,13 @@
 ## Log book
+# Tuesday, April 17
+* Results: test accuracy 0.80. 
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/avg-17april.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/indivduals-5000gens-17april?raw=true)
+* Interesting: average fitness of population is decreasing.
+* Implemented NEAT for the larger images (600x800px) to see if a normal field of view images works better than cropped images. 
+* Talked to Gongjin. We found out that neat-python does not use tournament selection but random selection. Tomorrow I will implement Tournament selection and check PEAS (python evolutionary algoritms) if it is also suitable for object recognition. 
+
+
 # Monday, April 16
 * Changed the sobel filter: Using a larger stride (3), pooling is not needed anymore.
 * Implemented soft-max layer in the evaluation to predict final output.
