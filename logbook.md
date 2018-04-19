@@ -6,6 +6,10 @@
 * Ran an experiment with 1000 generations, but fitness was decreasing. Slight increase in the beginning and drop after generation 70. Might be due to drop in speciation due to stagnation and species elitism 3. A lot of bad (the worst, fitness -.5) individuals are still reproduced. See the figures below. Must be due to the reproduction threshold. For the next experiments, this fraction is decreased.
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/indivduals-1000gens-18april-tourn.png?raw=true)
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/avg-18april-tourn.png?raw=true)
+* Another test with lower enable connection rate (now 0.01), yields complexer model and better performance even after 100 generations.
+* ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test-1-avg-100gens-19april-test1?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test-1-indivduals-100gens-19april-test1.png?raw=true)
+* Increasing average fitness!!!!
 
 
 # Tuesday, April 17
