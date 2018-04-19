@@ -1,4 +1,13 @@
 ## Log book
+# Wednesday, April 18
+* Softmax yields values between [0.27,0.73] when the prediction itself is [0,1], tried to fix this and implement Cross Entropy as error/fitness. This has to be minimalized, but NEAT is not working well for minimalizing functions. So I decided to continue with softmax and the dot product as fitness.
+* Als added penelizing for wrong classifications to steer NEAT even more in the right direction.
+* Implemented Tournament selection by altering the source code. Initial was random selection.
+* Ran an experiment with 1000 generations, but fitness was decreasing. Slight increase in the beginning and drop after generation 70. Might be due to drop in speciation due to stagnation and species elitism 3. A lot of bad (the worst, fitness -.5) individuals are still reproduced. See the figures below. Must be due to the reproduction threshold. For the next experiments, this fraction is decreased.
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/indivduals-1000gens-18april-tourn.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/avg-18april-tourn.png?raw=true)
+
+
 # Tuesday, April 17
 * Results: test accuracy 0.80. 
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/avg-17april.png?raw=true)
