@@ -1,4 +1,25 @@
 ## Log book
+
+# Monday, April 20
+* Both experiments wit multiple or just one structural mutation have a high test accuracy (0.88 and 0.885 resp.). The single structural mutation is reaches a higher accuracy, but it takes longer to get an individual with high fitness. Training fitness is 0.92 for both. 
+* Implemented the new fitness function.
+* Run: 1000 gens with new fitness function. 
+* Implemented a seperate test python file. Now I can change some criteria or do testing after the evolving is done. Also, the model is saved to a pickle file and could be loaded.
+
+# Friday, April 20
+* Set up another experiment with 2500 generations, now with a maximum of 1 stuctural mutation on each child. Still using the old fitness function to compare it to the previous run.
+
+One structural mutation:
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test4-avg.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test4-indi.png?raw=true)
+
+# Thursday, April 19
+* Started to experiment with 2500 generations and the lower (0.01) enable connection rate. A lot of mutations happen on each child. Interesting to lower this amount.
+* Had a talk with Gongjin on the fitness function. By penalizing and rewarding outputs that are very much right or wrong, a 'bonus' is added to the dot product: the difference between the predicted values. So: [0.49, 0.51] would have less bonus than [0.01, 0.99] for a negative example, but [0.51,0.49] is also penalized less than [0.99, 0.01].
+Multiple structural mutations:
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test3-avg.png?raw=true)
+![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test3-indi.png?raw=true)
+
 # Wednesday, April 18
 * Softmax yields values between [0.27,0.73] when the prediction itself is [0,1], tried to fix this and implement Cross Entropy as error/fitness. This has to be minimalized, but NEAT is not working well for minimalizing functions. So I decided to continue with softmax and the dot product as fitness.
 * Als added penelizing for wrong classifications to steer NEAT even more in the right direction.
