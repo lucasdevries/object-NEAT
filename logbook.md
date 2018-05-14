@@ -1,6 +1,49 @@
 ## Log book
+# Sunday,May 6 to Tuesday, May 8
+* Transferred part of the neat-python code to MultiNEAT to do object recognition.
+* Did a lot of different test runs to see if MultiNEAT is working accordingly.
+* Wrote additional code to plot the individuals, save statistics and make MultiNEAT complete for experimentation. 
+* Runs about 10 times faster than neat-python, great!
+* Still figuring out how some python bindings work.
+* I think this is a great step. Experimenting with neat-python gave me the ability to learn all about the parameters and how NEAT works and this implementation is great for experimentation.
 
-# Monday, April 20
+# Saturday,May 5
+* Spent all day trying to install MultiNEAT. Istalled Xcode, and after a few hours I got it working (magicically..). Ran some tests with a simple XOR example for NEAT and HyperNEAT. Seems to be working.
+
+
+# Friday,May 4
+* Gongjin and I installed CLion and OpenCV to give me the ability to build a larger data set with new samples from different robots.
+* Another attempt to install MultiNEAT, because I still have the feeling that neat-python is not the right choice. I have to alter too much of the source code and see no real improvements. Also, it is really slow. 
+
+# Thursday,May 3
+* Meeting with Finn was postponed. No further developments.
+
+# Wednesday,May 2
+* Discussed the greater goal of the research and my thesis as a component of this research.
+
+# Tuesday, May 1
+* Implemented the computation time in the fitness function. Weight for normal fitness is now 0.95, while weight for computation time is 0.05, and both are normalized such that the time dependance is still small.
+* Wrote down all questions for meeting with Finn on Wednesday. 
+* Started to build a TensorFlow pipeline to get a Neural Network using backpropagation to compare to my evolve NN. Test evaluation: 50%…
+
+# Monday, April 30
+* Tried to implement calculation time dependancy. Seems counterintuitive to me: shorter calculation time means a less complex network. But we want both short calculation time and high complexity.
+* Gongjin and I had a discussion with Jacqueline. Got some interesting questions and wrote these down to discuss with Finn. 
+* Started to experiment with more individuals and lower compatibility to increase diversity.
+
+# Thursday, April 26
+* Gongjin explained why we just care about the small image sample and not the fullsize images. Discussed the hog filter.
+* Skimage test accuracy: 0.845. I stopped the CV2 experiment because the fitness did not go above 0.0.
+* Played with the PEAS implementation of NEAT. Modified it for object recognition. Each generation is much slower (takes about 10 times as much time). I will discuss this with Finn. 
+
+# Wednesday, April 25
+* Experiments with the a Hog filter. Tried two implementation: one with CV2 (336 inputs) and one from Skimage (624 inputs). CV2 gives me the opportunity to define stride, Skimage is more shallow. Visually, the difference between a positive and negative example for Skimage is large. But for CV2 with the parameters from Gongjins research, the difference looks very small.
+* Set up 2 experiments with both implementations.
+
+# Tuesday, April 24
+* Attended a funeral, so I was not able to work on the thesis.
+
+# Monday, April 23
 * Both experiments wit multiple or just one structural mutation have a high test accuracy (0.88 and 0.885 resp.). The single structural mutation is reaches a higher accuracy, but it takes longer to get an individual with high fitness. Training fitness is 0.92 for both. 
 * Implemented the new fitness function.
 * Run: 1000 gens with new fitness function. 
@@ -21,8 +64,8 @@ Multiple structural mutations:
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/test3-indi.png?raw=true)
 
 # Wednesday, April 18
-* Softmax yields values between [0.27,0.73] when the prediction itself is [0,1], tried to fix this and implement Cross Entropy as error/fitness. This has to be minimalized, but NEAT is not working well for minimalizing functions. So I decided to continue with softmax and the dot product as fitness.
-* Als added penelizing for wrong classifications to steer NEAT even more in the right direction.
+* Softmax yields values between [0.27,0.73] when the prediction itself is [0,1], tried to fix this and implement Cross Entropy as error/fitness. This has to be minimized, but NEAT is not working well for minimizing functions. So I decided to continue with softmax and the dot product as fitness.
+* Als added penalizing for wrong classifications to steer NEAT even more in the right direction.
 * Implemented Tournament selection by altering the source code. Initial was random selection.
 * Ran an experiment with 1000 generations, but fitness was decreasing. Slight increase in the beginning and drop after generation 70. Might be due to drop in speciation due to stagnation and species elitism 3. A lot of bad (the worst, fitness -.5) individuals are still reproduced. See the figures below. Must be due to the reproduction threshold. For the next experiments, this fraction is decreased.
 ![alt text](https://github.com/lucasdevries/object-NEAT/blob/master/images/indivduals-1000gens-18april-tourn.png?raw=true)
